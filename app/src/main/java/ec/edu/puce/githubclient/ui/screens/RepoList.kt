@@ -16,19 +16,19 @@ fun RepoList(
         RepoItem(
             name = "Repositorio 1 de Android",
             description = "Repositorio 1 creado en Kotlin",
-            avatarUrl= "https://www.google.com/url?sa=t&source=web&rct=j&url=https%3A%2F%2Fautodesignmagazine.com%2Fen%2F2018%2F06%2Fnissan-gtr-50-by-italdesign%2F&ved=0CBYQjRxqFwoTCKCigqqSt5QDFQAAAAAdAAAAABAb&opi=89978449",
+            avatarUrl= "https://diecastsociety.com/wp-content/uploads/2025/02/aa_GTR50con-1.jpg",
             language = "Kotlin"
         )
         RepoItem(
             name = "Repositorio 2 de Android",
             description = "Repositorio 2 creado en Kotlin",
-            avatarUrl= "https://www.google.com/url?sa=t&source=web&rct=j&url=https%3A%2F%2Fes.motor1.com%2Fnews%2F386307%2Fnissan-gtr50-italdesign-produccion-2020%2F&ved=0CBYQjRxqFwoTCKCigqqSt5QDFQAAAAAdAAAAABA2&opi=89978449",
+            avatarUrl= "https://diecastsociety.com/wp-content/uploads/2025/02/aa_GTR50con-5.jpg",
             language = "Kotlin"
         )
         RepoItem(
             name = "Repositorio 3 de Android",
             description = "Repositorio 2 creado en Kotlin",
-            avatarUrl= "https://www.google.com/url?sa=t&source=web&rct=j&url=https%3A%2F%2Fdiecastsociety.com%2Fphoto-galery-autoart-nissan-gt-r50-italdesign-good-wood%2F&ved=0CBYQjRxqGAoTCKCigqqSt5QDFQAAAAAdAAAAABCSAQ&opi=89978449",
+            avatarUrl= "https://diecastsociety.com/wp-content/uploads/2025/02/aa_GTR50con-15.jpg",
             language = "Kotlin"
         )
     }
