@@ -1,8 +1,8 @@
 # Laboratorio Android. Cliente de GitHub
 
 ## Datos del estudiante
-- [Nombre del estudiante]
-- [Carrera]
+- Rojas Sebastián
+- PUCETEC - Desarrollo de Software
 
 ## Descripción del Proyecto
 Este proyecto es una serie de laboratorios para estudiantes donde se implementará una aplicación Android que funciona como cliente de GitHub utilizando Jetpack Compose. La aplicación evoluciona progresivamente desde una UI estática hasta una integración completa con la API REST de GitHub.
@@ -75,3 +75,184 @@ Este proyecto es una serie de laboratorios para estudiantes donde se implementar
 # Datos del docente
 Pablo Pérez Martínez
 [✉️](mailto:paperez@puce.edu.ec)
+
+´´Comandos útiles para usar Android Studio en Mac.´´
+
+---
+
+# Atajos básicos
+
+| Acción                           | Comando         |
+| -------------------------------- | --------------- |
+| Buscar archivos                  | `Shift + Shift` |
+| Abrir clase                      | `⌘ + O`         |
+| Buscar texto en proyecto         | `⌘ + Shift + F` |
+| Buscar en archivo actual         | `⌘ + F`         |
+| Ir a línea                       | `⌘ + L`         |
+| Mostrar estructura del archivo   | `⌘ + F12`       |
+| Cambiar entre archivos recientes | `⌘ + E`         |
+
+---
+
+# Edición de código
+
+| Acción                   | Comando              |
+| ------------------------ | -------------------- |
+| Autocompletar código     | `Control + Space`    |
+| Formatear código         | `⌘ + Option + L`     |
+| Importar automáticamente | `Option + Enter`     |
+| Duplicar línea           | `⌘ + D`              |
+| Eliminar línea           | `⌘ + Backspace`      |
+| Comentar línea           | `⌘ + /`              |
+| Comentar bloque          | `⌘ + Option + /`     |
+| Mover línea arriba       | `Option + Shift + ↑` |
+| Mover línea abajo        | `Option + Shift + ↓` |
+
+---
+
+# Navegación rápida
+
+| Acción                     | Comando         |
+| -------------------------- | --------------- |
+| Ir a definición            | `⌘ + B`         |
+| Ver documentación          | `F1`            |
+| Volver atrás               | `⌘ + [`         |
+| Ir adelante                | `⌘ + ]`         |
+| Mostrar archivos recientes | `⌘ + E`         |
+| Mostrar ventanas recientes | `⌘ + Shift + E` |
+
+---
+
+# Refactorización
+
+| Acción                   | Comando          |
+| ------------------------ | ---------------- |
+| Renombrar variable/clase | `Shift + F6`     |
+| Extraer función          | `⌘ + Option + M` |
+| Extraer variable         | `⌘ + Option + V` |
+| Refactorizar menú        | `Control + T`    |
+
+---
+
+# Jetpack Compose útiles
+
+| Acción                  | Comando                |
+| ----------------------- | ---------------------- |
+| Mostrar Preview         | `Split` arriba derecha |
+| Actualizar Preview      | `⌘ + Shift + R`        |
+| Crear composable rápido | escribir `@Composable` |
+| Autoimport Compose      | `Option + Enter`       |
+
+---
+
+# Ejecutar la app
+
+| Acción       | Comando       |
+| ------------ | ------------- |
+| Ejecutar app | `Control + R` |
+| Debug app    | `Control + D` |
+| Detener app  | `⌘ + F2`      |
+| Abrir Logcat | `⌘ + 6`       |
+
+---
+
+# Terminal integrada
+
+| Acción         | Comando        |
+| -------------- | -------------- |
+| Abrir terminal | `Option + F12` |
+
+Desde ahí puedes usar comandos como:
+
+```bash id="1fxckv"
+./gradlew build
+```
+
+Compilar proyecto.
+
+```bash id="1e3df5"
+./gradlew clean
+```
+
+Limpiar build.
+
+```bash id="mllj9v"
+./gradlew installDebug
+```
+
+Instalar app en emulador/dispositivo.
+
+---
+
+# Comandos MUY útiles para Compose
+
+## Crear rápidamente un composable
+
+Escribes:
+
+```kotlin id="32z9q3"
+comp
+```
+
+y presionas `Tab`.
+
+---
+
+## Crear preview
+
+Escribes:
+
+```kotlin id="uzy4e0"
+prev
+```
+
+y presionas `Tab`.
+
+---
+
+# Atajos más importantes para sobrevivir Android Studio
+
+Si solo memorizas 5:
+
+| Acción               | Comando          |
+| -------------------- | ---------------- |
+| Buscar TODO          | `Shift + Shift`  |
+| Formatear código     | `⌘ + Option + L` |
+| Arreglos automáticos | `Option + Enter` |
+| Ejecutar app         | `Control + R`    |
+| Buscar texto         | `⌘ + Shift + F`  |
+
+---
+
+# Tip extra para MacBook
+
+Si las teclas F1–F12 no funcionan:
+
+Ve a:
+
+```text id="50x7qe"
+System Settings → Keyboard
+```
+
+y activa:
+
+```text id="dj8ubx"
+Use F1, F2, etc. keys as standard function keys
+```
+
+---
+
+# Recomendación importante
+
+Activa:
+
+```text id="rb6v6l"
+Android Studio → Settings → Editor → General → Auto Import
+```
+
+y marca:
+
+* Add imports automatically
+* Optimize imports on the fly
+
+Te evita muchos errores en Compose.
