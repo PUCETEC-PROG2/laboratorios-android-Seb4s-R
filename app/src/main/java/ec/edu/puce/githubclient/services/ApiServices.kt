@@ -1,0 +1,10 @@
+package ec.edu.puce.githubclient.services
+
+import ec.edu.puce.githubclient.models.Repository
+import retrofit2.http.GET
+
+interface ApiServices {
+    @GET("/user/repos")
+    suspend fun getRepositories () : List<Repository>
+}
+
