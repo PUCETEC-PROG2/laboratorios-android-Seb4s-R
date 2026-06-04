@@ -1,6 +1,5 @@
 package ec.edu.puce.githubclient.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -12,50 +11,144 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 
+// =======================================================
+// TEMA OSCURO
+// =======================================================
+//
+// Este será el tema principal de la aplicación.
+//
+// La combinación:
+//
+// DeepOceanBlue
+// ElectricBlue
+// BrightTurquoise
+//
+// produce una apariencia moderna tipo dashboard,
+// muy cercana al estilo Apple y VisionOS.
+// =======================================================
+
 private val DarkColorScheme = darkColorScheme(
-    primary = PuceTeal,
-    secondary = PurpleGrey80,
-    tertiary = PuceBlue,
-    primaryContainer = PuceTeal,
-    onPrimaryContainer = Color.Cyan,
+
+    // Color principal
+    primary = ElectricBlue,
+
+    // Color secundario
+    secondary = BrightTurquoise,
+
+    // Color terciario
+    tertiary = SoftTurquoise,
+
+    // Fondo principal
+    background = DeepOceanBlue,
+
+    // Superficies (cards)
+    surface = GlassDark,
+
+    // Texto sobre primary
+    onPrimary = Color.White,
+
+    // Texto sobre secondary
+    onSecondary = TextPrimary,
+
+    // Texto sobre fondo
+    onBackground = TextPrimary,
+
+    // Texto sobre superficies
+    onSurface = TextPrimary
 )
+
+
+// =======================================================
+// TEMA CLARO
+// =======================================================
+//
+// Mantiene coherencia visual con la misma paleta.
+// =======================================================
 
 private val LightColorScheme = lightColorScheme(
-    primary = PuceTeal,
-    secondary = PurpleGrey40,
-    tertiary = PuceBlue
 
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+    primary = ElectricBlue,
+
+    secondary = BrightTurquoise,
+
+    tertiary = PuceBlue,
+
+    background = SoftTurquoise,
+
+    surface = GlassWhite,
+
+    onPrimary = TextPrimary,
+
+    onSecondary = TextPrimary,
+
+    onBackground = DeepOceanBlue,
+
+    onSurface = DeepOceanBlue
 )
+
+
+// =======================================================
+// TEMA GLOBAL DE LA APLICACIÓN
+// =======================================================
+//
+// Este composable envuelve toda la app.
+//
+// Se encarga de:
+//
+// - Aplicar colores
+// - Aplicar tipografía
+// - Aplicar Material3
+// =======================================================
 
 @Composable
 fun GithubClientTheme(
+
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
+
     dynamicColor: Boolean = false,
+
     content: @Composable () -> Unit
+
 ) {
+
+    // ===================================================
+    // SELECCIÓN DEL ESQUEMA DE COLORES
+    // ===================================================
+
     val colorScheme = when {
+
+        // Android 12+
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
+
             val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
+
+            if (darkTheme)
+                dynamicDarkColorScheme(context)
+            else
+                dynamicLightColorScheme(context)
         }
 
         darkTheme -> DarkColorScheme
+
         else -> LightColorScheme
     }
 
+    // ===================================================
+    // MATERIAL THEME
+    // ===================================================
+    //
+    // Aplica:
+    //
+    // - Colores
+    // - Tipografía
+    // - Componentes Material3
+    //
     MaterialTheme(
+
         colorScheme = colorScheme,
+
         typography = Typography,
+
         content = content
     )
 }
