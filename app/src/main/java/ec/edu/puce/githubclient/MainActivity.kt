@@ -15,26 +15,47 @@ import ec.edu.puce.githubclient.ui.theme.GithubClientTheme
 import ec.edu.puce.githubclient.viewmodels.RepoFormViewModel
 import ec.edu.puce.githubclient.viewmodels.RepoListViewModel
 
+/**
+ * Actividad principal de la aplicación.
+ * Gestiona la navegación básica entre la lista de repositorios y el formulario.
+ */
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             GithubClientTheme {
-                var currentScreen by remember { mutableStateOf(value = "repoList") }
-                val listViewModel: RepoListViewModel = viewModel ()
-                val formViewModel: RepoFormViewModel = viewModel ()
+                // Estado de navegación simple
+                var currentScreen by remember { mutableStateOf("repoList") }
+                
+                // Instancias compartidas de ViewModels
+                val listViewModel: RepoListViewModel = viewModel()
+                val formViewModel: RepoFormViewModel = viewModel()
+
                 when (currentScreen) {
                     "repoList" -> RepoList(
-                        onNavigateToForm = {
+                        viewModel = listViewModel,
+                        formViewModel = formViewModel,
+                        onNavigateToForm = { repo ->
+                            // Si se pasa un repo, entramos en modo edición
+                            formViewModel.setEditingRepo(repo)
                             formViewModel.resetError()
-                            currentScreen = "repoForm"}
+                            currentScreen = "repoForm"
+                        }
                     )
                     "repoForm" -> RepoForm(
-                        onBackClick = {currentScreen = "repoList"},
+                        viewModel = formViewModel,
+                        onBackClick = { 
+                            // Comentario: Resetear el estado de edición al salir
+                            formViewModel.setEditingRepo(null)
+                            currentScreen = "repoList" 
+                        },
                         onSaveSuccess = {
+                            // Comentario: Resetear el estado de edición al guardar con éxito
+                            formViewModel.setEditingRepo(null)
                             listViewModel.fetchRepos()
-                            currentScreen = "repoList"}
+                            currentScreen = "repoList"
+                        }
                     )
                 }
             }

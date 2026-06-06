@@ -2,7 +2,6 @@ package ec.edu.puce.githubclient.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.lifecycle.viewmodel.compose.viewModel
 import ec.edu.puce.githubclient.models.Repository
 import ec.edu.puce.githubclient.services.RetrofitClient
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -34,5 +33,9 @@ class RepoListViewModel : ViewModel() {
                 _isLoading.value = false
             }
         }
+    }
+
+    fun resetError() {
+        _errorMsg.value = null
     }
 }

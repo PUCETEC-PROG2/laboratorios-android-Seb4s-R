@@ -41,8 +41,8 @@ private val DarkColorScheme = darkColorScheme(
     // Fondo principal
     background = DeepOceanBlue,
 
-    // Superficies (cards)
-    surface = GlassDark,
+    // Comentario: Se cambia a un color sólido para evitar superposición ilegible en diálogos
+    surface = Color(0xFF0F2540),
 
     // Texto sobre primary
     onPrimary = Color.White,
@@ -75,7 +75,8 @@ private val LightColorScheme = lightColorScheme(
 
     background = SoftTurquoise,
 
-    surface = GlassWhite,
+    // Comentario: Se cambia a sólido en el tema claro también
+    surface = Color.White,
 
     onPrimary = TextPrimary,
 
